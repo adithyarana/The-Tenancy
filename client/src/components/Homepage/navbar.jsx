@@ -22,7 +22,7 @@ const Navbar = () => {
         <div className="flex items-center mt-5">
             <div className="flex-shrink-0 flex items-center">
              <Home className="h-8 w-8 text-emerald-600" />
-             <span className="ml-2 text-2xl font-bold text-gray-800">The Tenency</span>
+             <span className="ml-2 text-2xl font-bold text-gray-800">The Tenancy</span>
             </div>
             </div>
         </Link>
@@ -52,7 +52,7 @@ const Navbar = () => {
             
             <button 
               onClick={redirectToWhatsApp}
-              className="bg-emerald-600 text-white px-4 py-2 rounded-full flex items-center hover:bg-emerald-700 transition duration-150 ease-in-out"
+              className="bg-emerald-600 text-white px-4 py-2 rounded-full flex items-center hover:bg-emerald-700 transition duration-150 ease-in-out cursor-pointer"
             >
               <MessageSquare className="h-5 w-5 mr-2" />
               WhatsApp Us

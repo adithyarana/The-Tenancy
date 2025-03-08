@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Search, MapPin, Home, Shield, Star, Clock, Users } from "lucide-react";
 import { motion } from "framer-motion";
+import Tredingproperties from "./Tredingproperties";
 
 const RealEstateLandingPage = () => {
   const [location, setLocation] = useState("");
@@ -23,15 +24,26 @@ const RealEstateLandingPage = () => {
 
         <div className="relative z-10 flex flex-col justify-center items-center h-full text-center px-4 pt-52">
           <div className="pb-5">
-            <h1 className="text-5xl font-extrabold text-white mb-4">
+          <motion.h1
+           className="text-5xl font-extrabold text-white mb-4"
+           initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeIn" }}
+            viewport={{ once: true }}>
               Welcome to{" "}
-              <span className="text-green-400">The Tenency properties</span>
-            </h1>
-            <p className="text-lg text-white max-w-2xl mx-auto mb-8 ">
+              <span className="text-green-400">The Tenancy properties</span>
+            </motion.h1>
+            <motion.p 
+            className="text-lg text-white max-w-2xl mx-auto mb-8 
+            "
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}>
               Discover your dream home with personalized real estate solutions.
               We help you find the perfect property that matches your lifestyle
               and aspirations.
-            </p>
+            </motion.p>
           </div>
 
           {/* Property Filter */}
@@ -39,10 +51,10 @@ const RealEstateLandingPage = () => {
             <div className="bg-white shadow-lg rounded-xl p-6 border border-green-100">
               <div className="grid md:grid-cols-4 gap-4">
                 {/* Location Filter */}
-                <div className="relative">
-                  <label className="block text-green-800 mb-2">
+                <div className="relative ">
+                  <label className="block text-green-800 mb-2 mr-20">
                     <MapPin
-                      className="inline-block mr-2 text-green-600"
+                      className="inline-block mr-2 text-green-600 "
                       size={20}
                     />
                     Location
@@ -61,7 +73,7 @@ const RealEstateLandingPage = () => {
 
                 {/* Property Type Filter */}
                 <div className="relative">
-                  <label className="block text-green-800 mb-2">
+                  <label className="block text-green-800 mb-2 mr-11">
                     <Home
                       className="inline-block mr-2 text-green-600"
                       size={20}
@@ -82,20 +94,21 @@ const RealEstateLandingPage = () => {
 
                 {/* Price Range Filter */}
                 <div className="relative">
-                  <label className="block text-green-800 mb-2">To:</label>
+                  <label className="block text-green-800 mb-2 mr-40">For:</label>
                   <select
                     value={priceRange}
                     onChange={(e) => setPriceRange(e.target.value)}
                     className="w-full p-2 border border-green-200 rounded text-green-700"
                   >
-                    <option value="">Buy</option>
-                    <option value="0-500k">Lease</option>
+                    <option value="">All properties</option>
+                    <option value="Buy">Buy</option>
+                    <option value="Lease">Lease</option>
                   </select>
                 </div>
 
                 {/* Search Button */}
                 <div className="flex items-end">
-                  <button className="w-full bg-green-600 text-white p-2 rounded hover:bg-green-700 transition duration-300">
+                  <button className="w-full bg-green-600 text-white p-2 rounded-full hover:bg-green-700 transition duration-300 cursor-pointer">
                     <Search className="inline-block mr-2" size={20} />
                     Search Properties
                   </button>
@@ -117,7 +130,7 @@ const RealEstateLandingPage = () => {
             transition={{ duration: 0.9, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Why Choose The Tenency
+            Why Choose The Tenancy
           </motion.h2>
 
           {/* Grid Container */}
@@ -176,63 +189,66 @@ const RealEstateLandingPage = () => {
         </div>
       </section>
 
+      {/* trending properties section */}
+      <Tredingproperties />
+
       {/* Ready to Find Your Dream Home */}
-      <section className="py-16 bg-green-100">
-      <motion.div
-        className="max-w-4xl mx-auto text-center px-4"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true }}
-      >
-        {/* Animated Heading */}
-        <motion.h2
-          className="text-3xl font-bold text-green-800 mb-6"
-          initial={{ opacity: 0, y: 20 }}
+      <section className="py-16 ">
+        <motion.div
+          className="max-w-4xl mx-auto text-center px-4"
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          Ready to Find Your Dream Place?
-        </motion.h2>
-
-        {/* Animated Paragraph */}
-        <motion.p
-          className="text-lg text-green-700 mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          Let's turn your property dreams into reality. Contact us today for a
-          personalized consultation.
-        </motion.p>
-
-        {/* Animated Buttons */}
-        <motion.div
-          className="flex flex-col sm:flex-row justify-center gap-3 w-full"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="w-full sm:w-auto bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition duration-300 text-lg font-medium"
+          {/* Animated Heading */}
+          <motion.h2
+            className="text-3xl font-bold text-green-800 mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
           >
-            Search Properties
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="w-full sm:w-auto bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition duration-300 text-lg font-medium"
+            Ready to Find Your Dream Place?
+          </motion.h2>
+
+          {/* Animated Paragraph */}
+          <motion.p
+            className="text-lg text-green-700 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true }}
           >
-            Contact Us
-          </motion.button>
+            Let's turn your property dreams into reality. Contact us today for a
+            personalized consultation.
+          </motion.p>
+
+          {/* Animated Buttons */}
+          <motion.div
+            className="flex flex-col sm:flex-row justify-center gap-3 w-full"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="w-full sm:w-auto bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition duration-300 text-lg font-medium"
+            >
+              Search Properties
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="w-full sm:w-auto bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition duration-300 text-lg font-medium"
+            >
+              Contact Us
+            </motion.button>
+          </motion.div>
         </motion.div>
-      </motion.div>
-    </section>
+      </section>
     </div>
   );
 };
