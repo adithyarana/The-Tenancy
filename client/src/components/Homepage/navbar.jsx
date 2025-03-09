@@ -42,11 +42,11 @@ const Navbar = () => {
                Properties
             </a>
             
-            <a href="/about-us" className="text-gray-700 hover:text-emerald-600 font-medium transition duration-150 ease-in-out">
-              About Us
+            <a href="/Our-Services" className="text-gray-700 hover:text-emerald-600 font-medium transition duration-150 ease-in-out">
+            Our Services
             </a>
             
-            <a href="#contact" className="text-gray-700 hover:text-emerald-600 font-medium transition duration-150 ease-in-out">
+            <a href="/contact-us" className="text-gray-700 hover:text-emerald-600 font-medium transition duration-150 ease-in-out">
               Contact Us
             </a>
             
@@ -93,14 +93,14 @@ const Navbar = () => {
             </a>
             
             <a 
-              href="#about" 
+              href="/Our-Services" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-emerald-600 hover:bg-gray-50"
             >
-              About Us
+              Our Services
             </a>
             
             <a 
-              href="#contact" 
+              href="/contact-us" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-emerald-600 hover:bg-gray-50"
             >
               Contact Us

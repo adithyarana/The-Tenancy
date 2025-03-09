@@ -6,7 +6,8 @@ import AdminLogin from './pages/AdminLogin.jsx'
 import AdminDashboard from './pages/AdminDashboard.jsx'
 import AdminHomepage from './pages/AdminHomepage.jsx'
 import PropertyListing from './pages/PropertyListing.jsx'
-import Aboutus from './pages/Aboutus.jsx'
+import OurServices from './pages/OurServices.jsx'
+import Contactus from './pages/Contactus.jsx'
 
 function App() {
 
@@ -37,8 +38,12 @@ function App() {
           element:<PropertyListing/>,
         },
         {
-          path:'/about-us',
-          element:<Aboutus/>
+          path:'/Our-Services',
+          element:<OurServices/>
+        },
+        {
+          path:'/contact-us',
+          element:<Contactus/> 
         }
       ]
     }

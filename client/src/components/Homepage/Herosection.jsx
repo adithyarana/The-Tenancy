@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import { Search, MapPin, Home, Shield, Star, Clock, Users } from "lucide-react";
+import {  Shield, Star, Clock, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import Tredingproperties from "./Tredingproperties";
+import PropertyFilter from "./PropertyFilter";
 
 const RealEstateLandingPage = () => {
-  const [location, setLocation] = useState("");
-  const [propertyType, setPropertyType] = useState("");
-  const [priceRange, setPriceRange] = useState("");
-
+  
   return (
     <div className="min-h-screen">
       {/* Hero Section with Background Image */}
@@ -47,75 +45,8 @@ const RealEstateLandingPage = () => {
           </div>
 
           {/* Property Filter */}
-          <div className="max-w-4xl w-full px-4 pb-11 ">
-            <div className="bg-white shadow-lg rounded-xl p-6 border border-green-100">
-              <div className="grid md:grid-cols-4 gap-4">
-                {/* Location Filter */}
-                <div className="relative ">
-                  <label className="block text-green-800 mb-2 mr-20">
-                    <MapPin
-                      className="inline-block mr-2 text-green-600 "
-                      size={20}
-                    />
-                    Location
-                  </label>
-                  <select
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                    className="w-full p-2 border border-green-200 rounded text-green-700"
-                  >
-                    <option value="">All Locations</option>
-                    <option value="CA">Greater Noida</option>
-                    <option value="NY">Noida</option>
-                    <option value="FL">Delhi</option>
-                  </select>
-                </div>
-
-                {/* Property Type Filter */}
-                <div className="relative">
-                  <label className="block text-green-800 mb-2 mr-11">
-                    <Home
-                      className="inline-block mr-2 text-green-600"
-                      size={20}
-                    />
-                    Property Type
-                  </label>
-                  <select
-                    value={propertyType}
-                    onChange={(e) => setPropertyType(e.target.value)}
-                    className="w-full p-2 border border-green-200 rounded text-green-700"
-                  >
-                    <option value="">All Types</option>
-                    <option value="villa">Plot</option>
-                    <option value="apartment">Apartment</option>
-                    <option value="house">House</option>
-                  </select>
-                </div>
-
-                {/* Price Range Filter */}
-                <div className="relative">
-                  <label className="block text-green-800 mb-2 mr-40">For:</label>
-                  <select
-                    value={priceRange}
-                    onChange={(e) => setPriceRange(e.target.value)}
-                    className="w-full p-2 border border-green-200 rounded text-green-700"
-                  >
-                    <option value="">All properties</option>
-                    <option value="Buy">Buy</option>
-                    <option value="Lease">Lease</option>
-                  </select>
-                </div>
-
-                {/* Search Button */}
-                <div className="flex items-end">
-                  <button className="w-full bg-green-600 text-white p-2 rounded-full hover:bg-green-700 transition duration-300 cursor-pointer">
-                    <Search className="inline-block mr-2" size={20} />
-                    Search Properties
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <PropertyFilter/>
+         
         </div>
       </div>
 
