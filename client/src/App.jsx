@@ -9,6 +9,9 @@ import PropertyListing from './pages/PropertyListing.jsx'
 import OurServices from './pages/OurServices.jsx'
 import Contactus from './pages/Contactus.jsx'
 
+import { ToastContainer } from "react-toastify"; 
+import "react-toastify/dist/ReactToastify.css"; 
+
 function App() {
 
   const router = createBrowserRouter([
@@ -54,8 +57,22 @@ function App() {
 
 
   return (
+   <>
     <RouterProvider router={router}/>
+    <ToastContainer
+    position="top-right"
+    autoClose={5000}
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+    theme="light"
+    />
      
+   </>
   )
 }
 

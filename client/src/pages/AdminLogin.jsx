@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { toast } from "sonner";
+import { toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
+import { Lock, Mail, Shield } from 'lucide-react';
 
 function AdminLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault(); 
+    setIsLoading(true);
 
     try {
       const res = await axios.post(
@@ -18,64 +21,78 @@ function AdminLogin() {
         { withCredentials: true } 
       );
 
-      toast.success("Login successful");
+      toast.success("Login Success!")
       localStorage.setItem("adminToken", res.data.token); // ✅ Store token
       navigate("/admin/dashboard");
     } catch (error) {
       console.error("Login Error:", error.response?.data || error.message);
-      toast.error(error.response?.data?.message || "Invalid credentials!");
+      toast.error("Login Faild!");
     }
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-          Admin Login
-        </h2>
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-green-100 to-indigo-50 p-4">
+    <div className="w-full max-w-md bg-white rounded-xl shadow-xl p-8">
+      <div className="text-center mb-8">
+        <div className="flex justify-center mb-6">
+          <div className="p-3 bg-blue-100 rounded-full">
+            <Shield className="w-12 h-12 text-green-500" />
+          </div>
+        </div>
+        <h2 className="text-2xl font-bold text-gray-800">Admin Login</h2>
+        <p className="text-gray-600 mt-2">Enter your credentials to access the admin panel</p>
+      </div>
 
-        <form onSubmit={handleLogin} className="space-y-5">
-          {/* Email Input */}
-          <div>
-            <label className="block text-gray-600 font-medium">Email</label>
+      <form onSubmit={handleLogin} className="space-y-6">
+        <div className="space-y-2">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            Email
+          </label>
+          <div className="relative">
+            <Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
             <input
+              id="email"
               type="email"
-              className="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="admin@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
               required
             />
           </div>
+        </div>
 
-          {/* Password Input */}
-          <div>
-            <label className="block text-gray-600 font-medium">Password</label>
+        <div className="space-y-2">
+          <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+            Password
+          </label>
+          <div className="relative">
+            <Lock className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
             <input
+              id="password"
               type="password"
-              className="w-full mt-2 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter password"
+              placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
               required
             />
           </div>
+        </div>
 
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 cursor-pointer"
-          >
-            Login
-          </button>
-        </form>
+        <button
+          className="w-full py-2.5 px-4 text-white bg-green-500 rounded-lg font-medium cursor-pointer "
+        >
+            Sign in
+        
+        </button>
+      </form>
 
-        {/* Footer */}
-        <p className="text-center text-gray-500 text-sm mt-5">
-          Only authorized admins can access.
-        </p>
-      </div>
+      <p className="text-sm text-center text-gray-600 mt-6">
+        Protected admin area. Unauthorized access is prohibited.
+      </p>
     </div>
+  </div>
   );
 }
 
