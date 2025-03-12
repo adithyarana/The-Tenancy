@@ -14,9 +14,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50  ">
+    <nav className=" bg-gradient-to-b from-white to-green-50 shadow-lg sticky top-0 z-50   ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20">
+        <div className="flex justify-between h-20  ">
           {/* Logo and brand */}
         <Link>
         <div className="flex items-center mt-5">
@@ -60,7 +60,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex items-center  ">
             <button
               onClick={toggleMenu}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-emerald-600 focus:outline-none"
@@ -76,9 +76,11 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu */}
-      {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
+        <div className={`md:hidden transition-all ease-in-out duration-700 ${
+          isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+        }`}
+        >
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gradient-to-b from-white to-green-50 shadow-lg ">
             <div className="relative mx-2 my-3">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                
@@ -115,7 +117,7 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-      )}
+      
     </nav>
   );
 };

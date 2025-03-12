@@ -1,21 +1,42 @@
 import { Building2, Home, Key, TrendingUp } from "lucide-react"
 import {Link} from "react-router-dom"
+import { motion } from "framer-motion";
 const  ServiceSection=()=> {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-green-50">
       <div className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-green-800 mb-10">Our Services</h2>
-            <p className="max-w-[800px] text-gray-500 md:text-xl/relaxed">
+            <motion.h2
+             className="text-3xl font-bold tracking-tighter sm:text-5xl text-green-800 mb-10"
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.6, ease: "easeOut" }}
+             viewport={{ once: true }}
+           >
+              Our Services
+              </motion.h2>
+            <motion.p
+             className="max-w-[800px] text-gray-500 md:text-xl/relaxed"
+             initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}
+            >
               We provide comprehensive real estate solutions tailored to your needs, from property acquisition and sales
               to investment consulting and market analysis, ensuring you make informed decisions in today's dynamic real
               estate market.
-            </p>
+            </motion.p>
           </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <motion.div 
+        className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+        >
           <div className="group overflow-hidden transition-all hover:shadow-lg rounded-lg border border-gray-200 bg-white">
             <div className="p-6">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-green-700 group-hover:bg-green-600 group-hover:text-white">
@@ -59,9 +80,14 @@ const  ServiceSection=()=> {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="mt-20 flex flex-col items-center justify-center space-y-10 text-center  ">
+        <motion.div className="mt-20 flex flex-col items-center justify-center space-y-10 text-center  "
+         initial={{ opacity: 0, y: 40 }}
+         whileInView={{ opacity: 1, y: 0 }}
+         transition={{ duration: 0.6, ease: "easeOut" }}
+         viewport={{ once: true }}
+         >
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
             <div className="flex flex-col items-center space-y-2">
               <span className="text-4xl font-bold text-green-700">15+</span>
@@ -85,7 +111,7 @@ const  ServiceSection=()=> {
             </button>
            </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

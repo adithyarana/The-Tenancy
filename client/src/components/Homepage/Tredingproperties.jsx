@@ -45,7 +45,7 @@ const settings = {
 
 const Tredingproperties = () => {
   return (
-    <div className="container mx-auto px-4 md:px-8 lg:px-12 py-10 ">
+    <div className="container mx-auto px-4 md:px-8 lg:px-12 py-10   ">
     <div className="flex flex-col md:flex-row items-center gap-8 ">
       {/* Left Side: Text Section */}
       <motion.div

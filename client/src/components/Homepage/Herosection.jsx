@@ -51,7 +51,7 @@ const RealEstateLandingPage = () => {
       </div>
 
       {/* Why Choose Us Section */}
-      <section id="why-choose-us" className="py-16 bg-white">
+      <section id="why-choose-us" className="py-16 bg-gradient-to-b from-white to-green-50">
         <div className="max-w-6xl mx-auto px-4">
           {/* Section Heading */}
           <motion.h2
@@ -121,10 +121,10 @@ const RealEstateLandingPage = () => {
       </section>
 
       {/* trending properties section */}
-      <Tredingproperties />
+      <Tredingproperties  />
 
       {/* Ready to Find Your Dream Home */}
-      <section className="py-16 ">
+      <section className="py-16  bg-gradient-to-b from-white to-green-50 ">
         <motion.div
           className="max-w-4xl mx-auto text-center px-4"
           initial={{ opacity: 0, y: 40 }}
