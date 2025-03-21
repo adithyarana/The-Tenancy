@@ -22,7 +22,8 @@ function AdminLogin() {
       );
 
       toast.success("Login Success!")
-      localStorage.setItem("adminToken", res.data.token); // ✅ Store token
+      localStorage.setItem("adminToken", res.data.token);
+      console.log("Token received:", res.data.token);
       navigate("/admin/dashboard");
     } catch (error) {
       console.error("Login Error:", error.response?.data || error.message);

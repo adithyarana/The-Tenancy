@@ -64,6 +64,7 @@ const PropertyFilter = () => {
               <option value="CA">Greater Noida</option>
               <option value="NY">Noida</option>
               <option value="FL">Delhi</option>
+              <option value="AY">Yamuna Expressway</option>
             </motion.select>
           </motion.div>
 
@@ -89,6 +90,7 @@ const PropertyFilter = () => {
               whileFocus={{ boxShadow: "0 0 0 3px rgba(72, 187, 120, 0.4)" }}
             >
               <option value="">All Types</option>
+              <option value="villa">Land</option>
               <option value="villa">Plot</option>
               <option value="apartment">Apartment</option>
               <option value="house">House</option>

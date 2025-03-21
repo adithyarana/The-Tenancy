@@ -8,6 +8,7 @@ import AdminHomepage from './pages/AdminHomepage.jsx'
 import PropertyListing from './pages/PropertyListing.jsx'
 import OurServices from './pages/OurServices.jsx'
 import Contactus from './pages/Contactus.jsx'
+import ProtectedRoutes from "./components/ProtectedRoutes.jsx"
 
 import { ToastContainer } from "react-toastify"; 
 import "react-toastify/dist/ReactToastify.css"; 
@@ -34,7 +35,11 @@ function App() {
         },
         {
           path:'/admin/dashboard',
-          element:<AdminDashboard/>,
+          element:
+          <ProtectedRoutes>
+              <AdminDashboard/>,
+          </ProtectedRoutes>
+        
         },
         {
           path:'/propertylisting',
