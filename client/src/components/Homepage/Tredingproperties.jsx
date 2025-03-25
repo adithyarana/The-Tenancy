@@ -55,13 +55,13 @@ const Tredingproperties = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <h2 className="text-4xl md:text-3xl  mb-10 font-bold text-green-800  md:mb-6 ">
+        <h2 className="text-4xl md:text-3xl  mb-10 font-bold text-green-800  md:mb-6 "> 
           Trending Properties
         </h2>
         <p className="text-gray-700 text-lg mb-3 md:mb-4 font-medium">
           Build your dream with The Tenancy Real Estate!
         </p>
-        <p className="text-gray-600 leading-relaxed  ">
+        <p className="text-gray-600 leading-relaxed text-lg  ">
           Now, invest in our upcoming projects of The Tenency at an affordable
           range. Our wide range of property types, from commercial and
           residential to industrial, will mesmerize you. You can avail of our

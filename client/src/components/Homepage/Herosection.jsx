@@ -28,12 +28,12 @@ const RealEstateLandingPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeIn" }}
             viewport={{ once: true }}>
-              Welcome to{" "}
-              <span className="text-green-400">The Tenancy properties</span>
+              Welcome to The{" "}
+              <span className="text-green-400"> Tenancy properties</span>
             </motion.h1>
             <motion.p 
-            className="text-lg text-white max-w-2xl mx-auto mb-8 
-            "
+           className="text-base sm:text-lg text-white max-w-xs sm:max-w-2xl mx-auto mb-6 sm:mb-8 text-center leading-tight"
+
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
