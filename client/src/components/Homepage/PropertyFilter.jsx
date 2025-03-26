@@ -99,7 +99,7 @@ const PropertyFilter = () => {
 
           {/* Price Range Filter */}
           <motion.div className="relative" variants={itemVariants}>
-            <label className="block text-green-800 mb-2 mr-40">For:</label>
+            <label className="block text-green-800 mb-2 mr-30">For:</label>
             <motion.select
               value={For}
               onChange={(e) => setFor(e.target.value)}

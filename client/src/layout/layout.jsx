@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Homepage/navbar.jsx';
+import Footer from '../components/Homepage/Footer.jsx'
 
 function Applayout() {
   return (
@@ -9,6 +10,8 @@ function Applayout() {
       <main className="flex-grow w-full">  
         <Outlet />
       </main>
+
+      <Footer/>
      
     </div>
   );
